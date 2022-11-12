@@ -1,0 +1,21 @@
+@import 'vars';
+@import 'media';
+
+.preview-article {
+  &__edit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__top {
+    padding: {
+      top: 15px;
+      bottom: 15px;
+    }
+  }
+  &__title {
+    @include media('<maxPhone') {
+      font-size: $fs;
+    }
+  }
+}

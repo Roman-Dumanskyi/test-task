@@ -1,0 +1,17 @@
+<ui-accordion
+  title="User Profile"
+  buttonLabel="Edit"
+  open="true"
+  [buttonDisabled]="!formOptions?.formState?.disabled"
+  (buttonClicked)="enableForm()"
+>
+  <ui-base-form
+    [fields]="fields"
+    [model]="model"
+    [formOptions]="formOptions"
+    [formButtons]="formOptions?.formState?.disabled ? [] : formButtons"
+    (submitted)="updateProfile($event)"
+    (canceled)="onCancel()"
+  >
+  </ui-base-form>
+</ui-accordion>

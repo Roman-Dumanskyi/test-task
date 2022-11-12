@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.form-buttons__content {
+  display: inline-flex;
+  align-items: center;
+}

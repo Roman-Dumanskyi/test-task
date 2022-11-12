@@ -1,0 +1,25 @@
+<div
+  [loadingOverlay]="pending$ | async"
+  class="row article-list align-items-start"
+>
+  <div class="col-12">
+    <a
+      mat-raised-button
+      class="article-list__button"
+      color="accent"
+      [routerLink]="['./add']"
+    >
+      <mat-icon>add</mat-icon> ADD ARTICLE</a
+    >
+  </div>
+  <div class="col-12">
+    <div class="row">
+      <ng-container *ngFor="let article of articles$ | async">
+        <articles-item-article
+          class="col-md-6 col-12"
+          [article]="article"
+        ></articles-item-article>
+      </ng-container>
+    </div>
+  </div>
+</div>

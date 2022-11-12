@@ -1,0 +1,37 @@
+<div
+  [loadingOverlay]="pending$ | async"
+  class="auth row justify-content-center"
+>
+  <mat-card class="auth__card col-xl-4 col-lg-5 col-md-6 col-sm-8 col-12">
+    <mat-card-header
+      class="auth__header auth__header--back"
+      *ngIf="!needShowTabs"
+    >
+      <mat-card-title>
+        <button class="auth__button" mat-icon-button (click)="goToBack()">
+          <mat-icon>arrow_back_ios </mat-icon>
+        </button>
+        {{ title }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="container-fluid">
+        <nav mat-tab-nav-bar class="row" *ngIf="needShowTabs">
+          <a
+            class="col-6"
+            mat-tab-link
+            *ngFor="let tab of tabs; let i = index"
+            [routerLink]="tab.url"
+            [attr.data-tab]="i"
+            routerLinkActive
+            #rla="routerLinkActive"
+            [active]="rla.isActive"
+          >
+            {{ tab.title }}
+          </a>
+        </nav>
+      </div>
+      <router-outlet></router-outlet>
+    </mat-card-content>
+  </mat-card>
+</div>

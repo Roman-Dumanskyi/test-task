@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - '12'
+branches:
+  only:
+    - master
+before_script:
+  - npm i -g firebase-tools
+  - npm i -g http-server
+script:
+  - npm run lint
+  - npm run test
+  - npm run cy:ci
+  - npm run build:prod
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN
+notifications:
+  email:
+    recipients:
+      - strutynskyi.roman@gmail.com
+    on_success: change
+    on_failure: always

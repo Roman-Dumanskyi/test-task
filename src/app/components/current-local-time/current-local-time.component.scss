@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .current-date {
+    padding: 30px;
+    font-size: 2rem;
+    border-radius: 6px;
+    text-align: center;
+
+    .error {
+      color: #dc3a49;
+    }
+  }
+
+  .update-btn {
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    background-color: rgb(99, 102, 241);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    padding: 10px;
+    width: max-content;
+    cursor: pointer;
+  }
+}
